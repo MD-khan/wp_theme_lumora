@@ -24,7 +24,7 @@ wp-content/upgrade/
 # Node Modules
 node_modules/
 
-# OS generated files
+# OS generated files clear
 .DS_Store
 Thumbs.db
 

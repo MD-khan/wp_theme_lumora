@@ -1,6 +1,6 @@
-# Make Theme 2024
+# Lumora v2
 
-**Build a Custom WordPress Theme Based on the Lumora Starter Theme**
+**Build a Next-Generation Custom WordPress Theme Based on the Lumora Starter Theme**
 
 ![WordPress Logo](https://upload.wikimedia.org/wikipedia/commons/6/6f/WordPress_logo.svg)
 
@@ -20,17 +20,20 @@
 
 ## Project Overview
 
-**Make Theme 2024** is a custom WordPress theme development project built using Docker for a streamlined and efficient development environment. This project leverages the [Lumora](https://github.com/austincumanan/lumora) starter theme to accelerate the theme development process, providing a solid foundation with best practices in place.
-
-By utilizing Docker, all WordPress files are mapped to the local project directory, allowing easy access and modification through your preferred code editor, such as VS Code. Additionally, phpMyAdmin is integrated for convenient database management.
+**Lumora v2** is a custom WordPress theme development project built using Docker for a streamlined and efficient development environment. This project builds upon the [Lumora Starter Theme](https://github.com/austincumanan/lumora) while introducing new features, enhancements, and a modern codebase. With Docker, all WordPress files are mapped to your local project directory for easy editing with VS Code or your favorite code editor. Additionally, phpMyAdmin is integrated for convenient database management.
 
 ## Features
 
-- **Dockerized Environment:** Simplifies setup and ensures consistency across different development machines.
-- **Starter Theme Integration:** Built upon the Lumora starter theme for a robust foundation.
-- **Live Reloading:** Immediate reflection of changes made to theme files.
-- **phpMyAdmin Included:** Easy database management interface.
-- **Version Control Ready:** Structured for Git-based version control and collaboration.
+- **Dockerized Environment:**  
+  Simplifies setup and ensures consistency across different development machines.
+- **Starter Theme Integration:**  
+  Leverages the robust Lumora starter theme as a foundation.
+- **Live Reloading:**  
+  See changes immediately as you develop.
+- **phpMyAdmin Included:**  
+  Manage your database with ease.
+- **Version Control Ready:**  
+  Structured for Git-based development and collaboration.
 
 ## Prerequisites
 
@@ -47,4 +50,4 @@ Before getting started, ensure you have the following installed on your machine:
 Open your terminal or command prompt and run:
 
 ```bash
-git clone https://github.com/yourusername/make-theme-2024.git
+git clone https://github.com/MD-khan/wp_theme_lumora.git
