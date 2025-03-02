@@ -1,0 +1,45 @@
+# Ignore everything by default
+/*
+
+# Do not ignore these critical files/folders
+!/.gitignore
+!/README.md
+
+# Allow the wp-content folder and its subdirectories
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/lumora/
+!/wp-content/themes/lumora/**
+
+# Ignore WordPress core files (they are not part of your theme)
+wp-admin/
+wp-includes/
+
+# Ignore WordPress content folders that you don't need in Git
+wp-content/cache/
+wp-content/backups/
+wp-content/uploads/
+wp-content/upgrade/
+
+# Node Modules
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Docker files (if you don't need to track them in Git)
+docker-compose.yml
+Dockerfile
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
