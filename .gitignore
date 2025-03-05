@@ -15,6 +15,9 @@
 wp-admin/
 wp-includes/
 
+# Ignore the metrex_demos folder inside lumora-v
+lumora-v/metrex_demos/
+
 # Ignore WordPress content folders that you don't need in Git
 wp-content/cache/
 wp-content/backups/
