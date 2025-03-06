@@ -14,5 +14,8 @@
     <?php wp_head(); // Important! WordPress enqueues styles & scripts here ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="page" class="page font--jakarta">
+    
+</div>
+<!-- END PAGE CONTENT -->
 
-   

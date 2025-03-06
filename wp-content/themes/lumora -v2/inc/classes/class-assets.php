@@ -82,6 +82,84 @@ class Assets {
     
 
     public function register_scripts() {
-        // Add scripts if needed in the future
+        // Ensure jQuery is enqueued from WordPress core (instead of manually loading from assets)
+        if (!wp_script_is('jquery', 'enqueued')) {
+            wp_enqueue_script('jquery');
+        }
+    
+        // Define `$ = jQuery` globally before other scripts load
+        wp_add_inline_script('jquery', 'var $ = jQuery;', 'before');
+    
+        // Core JavaScript Files
+        $scripts = [
+            'bootstrap'          => 'bootstrap.min.js',
+            'modernizr'          => 'modernizr.custom.js',
+            'jquery-easing'      => 'jquery.easing.js',
+            'jquery-appear'      => 'jquery.appear.js',
+            'menu'               => 'menu.js',
+            'owl-carousel'       => 'owl.carousel.min.js',
+            'pricing-toggle'     => 'pricing-toggle.js',
+            'magnific-popup'     => 'jquery.magnific-popup.min.js',
+            'request-form'       => 'request-form.js',
+            'jquery-validate'    => 'jquery.validate.min.js',
+            'ajaxchimp'          => 'jquery.ajaxchimp.min.js',
+            'popper'             => 'popper.min.js',
+            'lunar'              => 'lunar.js',
+            'wow'                => 'wow.js',
+            'changer'            => 'changer.js',
+            'styleswitch'        => 'styleswitch.js',
+            'custom'             => 'custom.js'
+        ];
+    
+        // Enqueue all scripts, making sure jQuery is a dependency
+        foreach ($scripts as $handle => $filename) {
+            $file_path = LUMORA_DIR_PATH . "/assets/js/{$filename}";
+            if (file_exists($file_path)) {
+                wp_enqueue_script(
+                    "lumora-{$handle}",
+                    LUMORA_DIR_URI . "/assets/js/{$filename}",
+                    ['jquery'], // Ensures jQuery is loaded first
+                    filemtime($file_path),
+                    true
+                );
+            }
+        }
+    
+        // Custom Inline Script for Context Menu Prevention and Dark Mode Toggle
+        wp_add_inline_script('lumora-custom', "
+            jQuery(document).on({
+                'contextmenu': function (e) {
+                    console.log('ctx menu button:', e.which);
+                    e.preventDefault();
+                },
+                'mousedown': function (e) {
+                    console.log('normal mouse down:', e.which);
+                },
+                'mouseup': function (e) {
+                    console.log('normal mouse up:', e.which);
+                }
+            });
+    
+            jQuery(function ($) {
+                $('.switch').click(function () {
+                    $('body').toggleClass('theme--dark');
+                    if ($('body').hasClass('theme--dark')) {
+                        $('.switch').text('Light Mode');
+                    } else {
+                        $('.switch').text('Dark Mode');
+                    }
+                });
+            });
+    
+            jQuery(document).ready(function ($) {
+                if ($('body').hasClass('theme--dark')) {
+                    $('.switch').text('Light Mode');
+                } else {
+                    $('.switch').text('Dark Mode');
+                }
+            });
+        ");
     }
+    
+    
 }
