@@ -9,23 +9,7 @@
  */
 ?>
 
-<footer id="colophon" role="contentinfo">
-    <div class="container">
-        <h3>Footer</h3>
-
-        <?php if ( is_active_sidebar( 'footer-widget' ) ) : ?>
-            <div class="footer-widgets">
-                <?php dynamic_sidebar( 'footer-widget' ); ?>
-            </div>
-        <?php else : ?>
-            <p><?php esc_html_e( 'Add widgets to the footer from the Widgets panel in WordPress.', 'lumora' ); ?></p>
-        <?php endif; ?>
-    </div>
-</footer>
-
-</div><!-- ./site -->
-</div><!-- ./site-content -->
-
 <?php wp_footer(); ?>
+</div> <!-- END PAGE CONTENT -->
 </body>
 </html>

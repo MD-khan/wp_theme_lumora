@@ -14,8 +14,11 @@
     <?php wp_head(); // Important! WordPress enqueues styles & scripts here ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="page font--jakarta">
-    
-</div>
-<!-- END PAGE CONTENT -->
 
+<div id="page" class="page font--jakarta">
+
+    <!-- HEADER -->
+    <header id="header" class="tra-menu navbar-light white-scroll w-full block pt-0">
+        <?php get_template_part('template-parts/header/header-top'); ?>
+    </header>
+    <!-- END HEADER -->
