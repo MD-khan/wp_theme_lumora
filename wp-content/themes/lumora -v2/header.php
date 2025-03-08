@@ -15,6 +15,18 @@
 </head>
 <body <?php body_class(); ?>>
 
+<!-- PRELOADER SPINNER -->
+<div id="loading" class="loading--theme h-full w-full fixed z-[99999999] top-0 bg-[#f5f5f9]">
+    <div id="loading-center"
+        class="absolute h-[100px] w-[100px] left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 animate-[loading-center-absolute_1s_infinite]">
+        <span class="loader w-[100px] h-[100px] inline-block relative rounded-[50%] border-2 border-solid border-[transparent_#888] after:content-[''] after:absolute after:-translate-x-2/4 after:-translate-y-2/4 after:rounded-[50%] after:border-[50px] after:border-solid after:border-[transparent_rgba(30,30,30,0.15)] after:left-2/4 after:top-2/4"></span>
+    </div>
+</div>
+
+<!-- STYLE SWITCHER -->
+<?php get_template_part('template-parts/header/style-switcher'); ?>
+
+<!-- PAGE WRAPPER -->
 <div id="page" class="page font--jakarta">
 
     <!-- HEADER -->

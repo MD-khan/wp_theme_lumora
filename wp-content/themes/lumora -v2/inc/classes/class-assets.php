@@ -22,7 +22,6 @@ class Assets {
         add_action('wp_enqueue_scripts', [$this, 'register_styles']);
         add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
     }
-
     public function register_styles() {
         // Google Fonts
         wp_enqueue_style('google-font-rubik', 'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap', [], null);
@@ -51,7 +50,7 @@ class Assets {
             }
         }
     
-        // Dropdown Effects (Ensure fade-down.css exists)
+        // Dropdown Effects
         if (file_exists(LUMORA_DIR_PATH . '/assets/css/dropdown-effects/fade-down.css')) {
             wp_enqueue_style('lumora-dropdown-effects', LUMORA_DIR_URI . '/assets/css/dropdown-effects/fade-down.css', [], filemtime(LUMORA_DIR_PATH . '/assets/css/dropdown-effects/fade-down.css'));
         }
@@ -78,6 +77,85 @@ class Assets {
     
         // **Main Stylesheet (style.css)**
         wp_enqueue_style('lumora-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
+    
+        // **Adding Inline CSS for Header & Navigation**
+        $inline_css = "
+        /* Header Styles */
+        #header {
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+        }
+    
+        .header-wrapper {
+            position: fixed;
+            z-index: 1030;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .wsmobileheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+    
+        .wsmainfull {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 20px 0;
+        }
+    
+        .wsmenu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        .wsmenu-list li {
+            position: relative;
+        }
+    
+        .wsmenu-list li a {
+            color: #b1b7cd;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s ease-in-out;
+        }
+    
+        .wsmenu-list li a:hover {
+            color: #ef2853;
+        }
+    
+        /* Mobile Menu */
+        @media screen and (max-width: 768px) {
+            .wsmenu-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+    
+            .wsmenu {
+                display: none;
+            }
+    
+            .wsmenu.active {
+                display: block;
+            }
+        }
+        ";
+    
+        // Inject inline CSS
+        wp_add_inline_style('lumora-style', $inline_css);
     }
     
 
@@ -160,6 +238,8 @@ class Assets {
             });
         ");
     }
+
+    
     
     
 }
