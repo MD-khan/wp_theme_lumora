@@ -17,6 +17,9 @@ if ( ! defined( 'LUMORA_DIR_URI' ) ) {
 // Include the autoloader.
 require_once LUMORA_DIR_PATH . '/inc/helpers/autoloader.php';
 require_once LUMORA_DIR_PATH . '/inc/helpers/template-tags.php';
+#require_once get_template_directory() . '/inc/class-custom-navwalker.php';
+
+
 
 function lumora_get_theme_instance() {
     \Lumora\Inc\LUMORA_THEME::get_instance();
