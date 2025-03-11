@@ -10,6 +10,9 @@ get_header(); // Include header.php
 ?>
  
  <?php get_template_part('template-parts/front-page/hero'); ?>
+
+ <?php get_template_part('template-parts/front-page/brands'); ?>
+
  
  <?php get_template_part('template-parts/front-page/services'); ?>
 
