@@ -21,6 +21,15 @@ get_header(); // Include header.php
 
  <?php get_template_part('template-parts/front-page/projects'); ?>
 
+ <?php get_template_part('template-parts/front-page/qa'); ?>
+
+
+ <?php get_template_part('template-parts/front-page/testmonials'); ?>
+
+ <?php get_template_part('template-parts/front-page/banner'); ?>
+
+
+
 
 
 <?php get_footer(); // Include footer.php ?>
